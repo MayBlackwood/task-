@@ -1,0 +1,33 @@
+<script>
+
+console.log(task([1, 1, 2, 3, 4, 4, 5, 6, 7, 7, 9, 10, 11, 11, 11, 11, 11, 12, 12, 12, 13, 14, 18, 18, 18]));
+
+function task(arr){
+    let counter = [];
+    let items = [];
+    let result = [];
+    let inResult = [];
+    let count = 0;
+
+    arr.sort(function(a, b) {
+    return a - b;
+    });
+
+    for(let i= 1; i < arr.length + 1; i++){
+        if(arr[i-1] != arr[i]){
+            counter.push(count + 1);
+            items.push(arr[i-1]);
+            count  = 0;
+        } else {
+            count +=1;
+        }
+    }
+
+    for(let i = 0; i < items.length; i++){
+        inResult.push(items[i], counter[i]);
+        result.push(inResult);
+        inResult = [];
+    }
+    return result;
+}
+</script>
