@@ -6,7 +6,6 @@ function task(arr){
     let counter = [];
     let items = [];
     let result = [];
-    let inResult = [];
     let count = 0;
 
     arr.sort(function(a, b) {
@@ -24,9 +23,7 @@ function task(arr){
     }
 
     for(let i = 0; i < items.length; i++){
-        inResult.push(items[i], counter[i]);
-        result.push(inResult);
-        inResult = [];
+        result.push(items[i], counter[i]);
     }
     return result;
 }
